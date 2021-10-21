@@ -4,7 +4,6 @@ import MovieCard from "components/MovieCard";
 const Container = lazy(() => import("@mui/material/Container"));
 
 export default function MoviesWithData({ data }) {
-  console.log(data);
   return (
     <Container
       sx={{
