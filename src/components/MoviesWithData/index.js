@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import MovieCard from "components/MovieCard";
 
 const Container = lazy(() => import("@mui/material/Container"));

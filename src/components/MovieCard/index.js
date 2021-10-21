@@ -5,7 +5,6 @@ const Card = lazy(() => import("@mui/material/Card"));
 const CardContent = lazy(() => import("@mui/material/CardContent"));
 const CardMedia = lazy(() => import("@mui/material/CardMedia"));
 const Typography = lazy(() => import("@mui/material/Typography"));
-const CardActionArea = lazy(() => import("@mui/material/CardActionArea"));
 
 export default function MovieCard({
   movie: { video, thumbnail, name, language, releasedYear },
