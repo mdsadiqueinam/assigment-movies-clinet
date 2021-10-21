@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from "react";
+import Header from "components/Header";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { LinearProgress } from "@mui/material";
+// import UploadForm from "components/UploadForm";
+
+const Movies = lazy(() => import("components/Movies"));
+const UploadForm = lazy(() => import("components/UploadForm"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+      <Header />
+        <Switch>            
+          <Suspense fallback={<LinearProgress color="secondary" />}>
+            <Route exact path="/movies" component={Movies} />
+            <Route exact path="/" component={UploadForm} />
+          </Suspense>
+        </Switch>
+      </Router>
     </div>
   );
 }
